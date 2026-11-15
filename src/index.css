@@ -1,0 +1,846 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --wine: #7b1e2b;
+  --wine-dark: #4a0f19;
+  --cream: #fff8ed;
+  --cream-card: #fffdf8;
+  --black: #171717;
+  --muted: #6b5f5f;
+  --border: #e7d6c8;
+  --soft-wine: #f6e6e8;
+  --shadow: rgba(74, 15, 25, 0.1) 0 10px 25px;
+
+  --text: var(--muted);
+  --text-h: var(--black);
+  --bg: var(--cream);
+  --accent: var(--wine);
+  --accent-bg: var(--soft-wine);
+  --accent-border: #d9a6ad;
+
+  --sans: "Inter", system-ui, sans-serif;
+  --heading: "Patrick Hand", cursive;
+}
+
+body {
+  margin: 0;
+  background-image: url('/gunnfoto2.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+/* body {
+  margin: 0;
+  background: url('/gunnvtfoto1.jpeg') center center / cover no-repeat fixed;
+  color: var(--text);
+  font-family: var(--sans);
+  position: relative;
+} */
+
+/* body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(114, 114, 114, 0.0);
+  pointer-events: none;
+  z-index: -1;
+} */
+
+#root {
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: 100svh;
+}
+
+.page {
+  padding: 10px 32px 64px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 18px 24px;
+  background: var(--cream-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
+}
+
+.logo:hover {
+  color: var(--wine);
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--black);
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-links button,
+.admin-tabs button {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--black);
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.nav-links button:hover,
+.admin-tabs button:hover {
+  border-color: var(--wine);
+  color: var(--wine);
+}
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 48px 32px;
+}
+
+.eyebrow {
+  color: var(--wine);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--cream-card);
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 1;
+  margin: 14px 0;
+  color:rgb(252, 249, 246);
+}
+
+h2 {
+  font-size: 36px;
+  margin: 0 0 18px;
+}
+
+.subtitle {
+  color: var(--cream-card);
+  max-width: 680px;
+  margin: 0 auto 28px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.primary-button {
+  border: none;
+  background: var(--wine);
+  color: white;
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(123, 30, 43, 0.18);
+}
+
+.primary-button:hover {
+  background: var(--wine-dark);
+}
+
+.reject-button {
+  border: 1px solid #d9a6ad;
+  background: #fff1f2;
+  color: var(--wine);
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.questions-section,
+.form-page {
+  max-width: 820px;
+  margin: 0 auto;
+  color:#5a5656;
+  /* this is where to change colors of the detialed responses on the question cards */
+}
+
+.filter-bar {
+  max-width: 820px;
+  margin: -20px auto 34px;
+  padding: 18px;
+  background: var(--cream-card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 14px;
+}
+
+.search-input,
+.question-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--black);
+  font-size: 16px;
+  font-family: var(--sans);
+}
+
+.question-input:focus,
+.search-input:focus {
+  outline: none;
+  border-color: var(--wine);
+  box-shadow: 0 0 0 3px rgba(123, 30, 43, 0.12);
+}
+
+.question-textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.question-card,
+.admin-card,
+.form-card {
+  background: var(--cream-card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 14px 20px;
+  margin-top: 8px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.question-card h3,
+.admin-card-header h3 {
+  color: var(--black);
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.status,
+.category-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.category-tag {
+  background: #f7e7d8;
+  color: var(--wine);
+  border: 1px solid #e2b7a4;
+}
+
+.clubs-organizations {
+  background: #f7d7db;
+  color: #8c2f39;
+  border-color: #e5b5bb;
+}
+
+.events {
+  background: #ffe5c7;
+  color: #b86a00;
+  border-color: #f3c991;
+}
+
+.student-life {
+  background: #fff4c4;
+  color: #ddb100;
+  border-color: #eadf9f;
+}
+
+.facilities {
+  background: #dff3ff;
+  color: #256b87;
+  border-color: #b8deef;
+}
+
+.academics {
+  background: #dff3df;
+  color: #2f6f44;
+  border-color: #b8ddb8;
+}
+
+.just-for-fun {
+  background: #eadcff;
+  color: #6c4aa3;
+  border-color: #d0bdf0;
+}
+
+.other {
+  background: #efefef;
+  color: #555555;
+  border-color: #d9d9d9;
+}
+
+.approved,
+.answered {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.pending {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.rejected {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.student-name,
+.admin-meta,
+.helper-text {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.empty-message {
+  color: var(--black);
+  font-size: 14px;
+}
+
+.admin-response-box {
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: #fff6f0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-response-box label,
+.form-card label {
+  font-weight: 800;
+  color: var(--black);
+}
+
+.admin-tabs,
+.admin-actions {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.admin-details {
+  background: #fff6f0;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  margin: 18px 0;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 35px;
+}
+
+.form-card h1 {
+  font-size: 42px;
+  margin: 0;
+  color:black;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  color: var(--wine);
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+  color: var(--black);
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 20px 16px 48px;
+  }
+
+  .navbar {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+  }
+
+  .logo {
+    font-size: 22px;
+    max-width: calc(100% - 56px);
+  }
+
+  .menu-toggle {
+    display: block;
+    flex: 0 0 44px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background: var(--cream-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.nav-links-open {
+    display: flex;
+  }
+
+  .nav-links button {
+    width: 100%;
+    min-height: 44px;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .filter-bar {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+
+  .hero {
+    padding: 28px 12px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .questions-section,
+  .form-page {
+    max-width: 100%;
+  }
+
+  .question-card,
+  .admin-card,
+  .form-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .question-card h3 {
+    font-size: 18px;
+  }
+
+  .admin-card-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pagination {
+    gap: 16px !important;
+    left: 0;
+  }
+}
+
+.pagination {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 26px !important;
+  margin: 34px auto 0 !important;
+  width: 100% !important;
+
+  position: relative;
+  left: -0px;
+}
+
+.pagination button,
+.pagination-arrow,
+.pagination-number {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: white !important;
+  font-family: var(--sans) !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.pagination-arrow {
+  font-size: 28px !important;
+  color: var(--wine) !important;
+  background: rgba(255, 253, 248, 0.9) !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(74, 15, 25, 0.18) !important;
+}
+
+.pagination-number.active {
+  background: var(--wine) !important;
+  color: white !important;
+  box-shadow: 0 6px 14px rgba(123, 30, 43, 0.25) !important;
+}
+
+.pagination-number:hover,
+.pagination-arrow:hover {
+  background: var(--cream-card) !important;
+  color: var(--wine) !important;
+}
+
+.pagination-arrow:disabled {
+  opacity: 0.80 !important;
+  cursor: not-allowed !important;
+}
+
+.student-name {
+  margin: 4px 0;
+}
+
+.admin-response-box p {
+  margin: 2px 0;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.read-more-button {
+  align-self: flex-start;
+  border: 0;
+  padding: 4px 0;
+  margin-top: 2px;
+  background: transparent;
+  color: var(--wine);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.read-more-button:focus-visible,
+.logo:focus-visible,
+.menu-toggle:focus-visible,
+.nav-links button:focus-visible {
+  outline: 3px solid rgba(123, 30, 43, 0.35);
+  outline-offset: 3px;
+}
+
+.response-pending-text {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.question-card > p {
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+.admin-description {
+  color: var(--black);
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 12px 12px 36px;
+  }
+
+  .hero {
+    padding: 24px 8px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 44px);
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .filter-bar {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .question-card,
+  .admin-card,
+  .form-card {
+    padding: 14px;
+  }
+
+  .admin-tabs {
+    gap: 8px;
+  }
+
+  .admin-tabs button,
+  .admin-actions button {
+    flex: 1 1 auto;
+  }
+
+  .pagination {
+    gap: 12px !important;
+  }
+}
+
+/* ---------------------------------------------
+   Subtle UI motion
+   --------------------------------------------- */
+
+/* Smooth, consistent interaction feedback. */
+.logo,
+.menu-toggle,
+.nav-links button,
+.admin-tabs button,
+.primary-button,
+.reject-button,
+.back-button,
+.read-more-button,
+.pagination button {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.primary-button:hover,
+.reject-button:hover,
+.nav-links button:hover,
+.admin-tabs button:hover,
+.pagination button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.primary-button:active,
+.reject-button:active,
+.nav-links button:active,
+.admin-tabs button:active,
+.pagination button:not(:disabled):active {
+  transform: translateY(0) scale(0.97);
+}
+
+.primary-button:hover {
+  box-shadow: 0 10px 22px rgba(123, 30, 43, 0.25);
+}
+
+.question-card,
+.admin-card,
+.form-card,
+.filter-bar,
+.navbar {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.question-card:hover,
+.admin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(74, 15, 25, 0.14);
+}
+
+/* Entrance motion for content when a page or filtered list appears. */
+@keyframes soft-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero,
+.filter-bar,
+.questions-section,
+.form-page,
+.admin-tabs {
+  animation: soft-rise-in 420ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.question-card,
+.admin-card {
+  animation: soft-rise-in 380ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.question-card:nth-of-type(1),
+.admin-card:nth-of-type(1) { animation-delay: 35ms; }
+.question-card:nth-of-type(2),
+.admin-card:nth-of-type(2) { animation-delay: 75ms; }
+.question-card:nth-of-type(3),
+.admin-card:nth-of-type(3) { animation-delay: 115ms; }
+.question-card:nth-of-type(4),
+.admin-card:nth-of-type(4) { animation-delay: 155ms; }
+.question-card:nth-of-type(5),
+.admin-card:nth-of-type(5) { animation-delay: 195ms; }
+
+/* Expand/collapse the mobile navigation with a short slide and fade. */
+@media (max-width: 760px) {
+  .nav-links {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.985);
+    transform-origin: top center;
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease,
+      visibility 180ms ease;
+  }
+
+  .nav-links.nav-links-open {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .menu-toggle span {
+    transform-origin: center;
+    transition: transform 180ms ease, opacity 140ms ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
+/* Clear keyboard focus without relying on hover. */
+.primary-button:focus-visible,
+.reject-button:focus-visible,
+.back-button:focus-visible,
+.admin-tabs button:focus-visible,
+.pagination button:focus-visible,
+.read-more-button:focus-visible {
+  outline: 3px solid rgba(123, 30, 43, 0.35);
+  outline-offset: 3px;
+}
+
+/* Honor the device's reduced-motion accessibility preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .question-card:hover,
+  .admin-card:hover,
+  .primary-button:hover,
+  .reject-button:hover,
+  .nav-links button:hover,
+  .admin-tabs button:hover,
+  .pagination button:not(:disabled):hover {
+    transform: none;
+  }
+}
